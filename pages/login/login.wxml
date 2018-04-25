@@ -1,0 +1,17 @@
+<!-- login.wxml -->
+<view class="contair login" >
+   <view class="login-item">
+      <image class="login-item-img"  src="../../images/24213.jpg"></image>
+      <view class="login-item-section">
+         <input placeholder="请输入账户名" class="login-item-input" placeholder-style="color:#f5f5f5;" bindinput="bindUserNameInput" />
+      </view>
+
+      <view class="login-item-section">
+         <input placeholder="请输入密码"password="true" class="login-item-input" placeholder-style="color:#f5f5f5;" bindinput="bindPasswordInput" />
+      </view>
+      <view class="login-item-button">
+         <button type="default" size="default" plain="false" loading="{{loading}}" class="login-button" bindtap="loginWanAndroid"> 登录 </button>
+      </view>
+   </view>
+
+</view>

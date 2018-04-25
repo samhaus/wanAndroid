@@ -1,0 +1,38 @@
+<view class="container more">
+
+   <view class="userinfo"  bindtap="loginPage">
+      <image wx:if='{{userInfo.avatarUrl!=undefine}}' class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <image wx:else class="userinfo-avatar" src='../../images/icon9.jpeg' background-size="cover "></image>
+      <text class="userinfo-nickname ">{{wanUserName}}</text>
+       <text class="user-motto">吃饭睡觉打豆豆...</text> 
+
+   </view>
+
+   <view class="my ">
+      <view class="my-item flex-wrp " style='margin-top:10px'>
+         <view class="myitem-icon flex-item ">
+            <image src="../../images/star.png "></image>
+         </view>
+         <view class="myitem-name flex-item ">
+            <text>选项1</text>
+         </view>
+      </view>
+      <view class="my-item flex-wrp ">
+         <view class="myitem-icon flex-item ">
+            <image src="../../images/draft.png "></image>
+         </view>
+         <view class="myitem-name flex-item ">
+            <text>选项2</text>
+         </view>
+      </view>
+      <view class="my-item flex-wrp ">
+         <view class="myitem-icon flex-item ">
+            <image src="../../images/recent.png "></image>
+         </view>
+         <view class="myitem-name flex-item ">
+            <text>选项3</text>
+         </view>
+      </view>
+
+   </view>
+</view>

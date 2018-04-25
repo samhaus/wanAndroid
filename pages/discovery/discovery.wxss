@@ -1,0 +1,123 @@
+.nav_page {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   position: absolute;
+   width: 100%;
+}
+
+.top-tab {
+   width: 750rpx;
+   height: 100rpx;
+   background: #298de5;
+   color: #8ccefd;
+   font-size: 28rpx;
+   line-height: 100rpx;
+   box-shadow: 0 2px 2px #bebebe;
+   /* margin: 0 0 8rpx 0; *//* z-index: 9999; */
+}
+
+.toptab.active {
+   color: #fff;
+   border-bottom: solid 2px #fff;
+}
+
+.activity {
+   width: 750rpx;
+   height: 375rpx;
+}
+
+.activity image {
+   width: 750rpx;
+   height: 375rpx;
+}
+
+.placehold {
+   font-size: 28rpx;
+   padding: 80rpx 0;
+}
+
+.nav_left {
+   display: inline-block;
+   width: 30%;
+   height: 100%;
+   background: #2a8ce5;
+   text-align: center;
+}
+
+.nav_left .nav_left_items {
+   height: 25px;
+   line-height: 25px;
+   padding: 6px 0;
+   border-bottom: 1px solid #dedede;
+   font-size: 12px;
+   background-color: #2a8ce5;
+   color: #fff;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.nav_left .nav_left_items.active {
+   background-color: #8ccefd;
+   color: #fff;
+}
+
+.nav_right {
+   position: absolute;
+   top: 0;
+   right: 0;
+   flex: 1;
+   width: 70%;
+   height: 100%;
+   padding: 10px;
+   background: #f0f4f3;
+   box-sizing: border-box;
+}
+
+.nav_right .nav_right_items {
+   float: left;
+   width: 33%;
+   height: 80px;
+   text-align: center;
+}
+
+.nav_right .nav_right_items image {
+   width: 50px;
+   height: 50px;
+}
+
+.nav_right .nav_right_items text {
+   display: block;
+   margin-top: 5px;
+   font-size: 10px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   color: gray;
+}
+
+.nav_empty {
+   display: block;
+   margin-top: 5px;
+   font-size: 16px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.nav_table {
+   position: absolute;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   background-color: white;
+   color: #939393;
+   height: 100%;
+}
+
+::-webkit-scrollbar {
+   width: 0px;
+   height: 0px;
+   color: transparent;
+}

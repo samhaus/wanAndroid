@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<scroll-view scroll-y class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<!-- 搜索一下 马上出发 -->
+   <view class="search flex-wrp top-tab flex-wrap flex-tab">
+      <view class="search-left flex-item" >
+         <image src="../../images/search.png"></image>
+         <input placeholder="搜索功能暂未开发" placeholder-class="search-placeholder" />
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+         <image src="../../images/lighting.png"></image>
+      </view>
+   </view>
+<view class="container withtab" style='margin: 90rpx 0 0 0;'>
+   <block  wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      <view class="feed-item withtab" bindtap="bindItemTap" data-idx="{{idx}}">
+         <view class="feed-source" >
+            <a class="flexHor">
+               <view class="avatar">
+                  <image src="../../images/icon9.jpeg"></image>
+               </view>
+               <text>{{item.author}} {{item.niceDate}}</text>
+               <text wx:if='{{item.fresh}}' style='color:red;'>新 ~</text>
+            </a>
+
+            <image wx:if="{{item.collect}}" bindtouchstart='collectStart' bindtouchend='collectEnd' class="item-more" mode="aspectFit" src="../../images/heart.png" catchtap="clickCollect" data-idx="{{idx}}" style="{{item.style_img}}"></image>
+            <image wx:else  bindtouchstart='collectStart' bindtouchend='collectEnd' class="item-more" mode="aspectFit" src="../../images/heart2.png" catchtap="clickCollect" data-idx="{{idx}}" style="{{item.style_img}}"></image>
+         </view>
+         <view class="feed-content">
+            <view class="question" qid="{{question_id}}">
+               <a class="question-link">
+                  <text>{{item.title}}</text>
+               </a>
+            </view>
+            <view class="answer-body">
+               <view>
+                  <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+               </view>
+               <view class="answer-actions">
+                  <view class=" like dot">
+                     <a>分类：{{item.superChapterName}} </a>
+                  </view>
+                  <view class="follow-it">
+                     <a>{{item.zan}} 赞同 </a>
+                  </view>
+                  <!-- <view class="follow-it">
+                            <a>关注问题</a>
+                        </view> -->
+               </view>
+            </view>
+         </view>
+      </view>
+   </block></view>
+</scroll-view>

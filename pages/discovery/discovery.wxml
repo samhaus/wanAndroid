@@ -1,0 +1,31 @@
+<block class='nav_page'>
+   <!-- 轮播图 -->
+   <swiper class="activity" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+         <swiper-item>
+            <image src="{{item.imagePath}}" class="slide-image" width="355" height="155" />
+         </swiper-item>
+      </block>
+   </swiper>
+   <!-- 列表 -->
+   <view class='nav_table'>
+      <scroll-view scroll-y class="nav_left">
+         <block wx:for="{{navLeftItems}}">
+            <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" data-index="{{index}}" bindtap="switchRightTab" data-id="{{item.id}}">{{item.name}}</view>
+         </block>
+      </scroll-view>
+      <scroll-view scroll-y class="nav_right">
+         <view wx:if="{{navRightItems[curIndex].children}}">
+            <block wx:for="{{navRightItems[curIndex].children}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+               <view class="nav_right_items" bindtap="bindItemTap" data-idx="{{idx}}">
+                  <navigator>
+                     <image src="../../images/android.png"></image>
+                     <text>{{item.name}}</text>
+                  </navigator>
+               </view>
+            </block>
+         </view>
+         <view wx:else class='nav_empty'>暂无数据</view>
+      </scroll-view>
+   </view>
+</block>

@@ -1,0 +1,45 @@
+<!--logs.wxml-->
+<scroll-view scroll-y style="height: 600px;" class="container withtab" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<view class="top-tab flex-wrap flex-tab">
+   <scroll-view class="toptab scroll-view_H" scroll-x style="width: 100%">
+      <text wx:for="{{navTab}}" wx:key="id" data-idx="{{item.id}}" catchtap="switchTab" class=" toptab {{item.id == currentNavtab ? 'active' : ''}}" style='padding-left:18px;padding-right:18px;padding-bottom:12px'>{{item.name}}</text>
+   </scroll-view>
+</view>
+
+   <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item">
+      <view class="feed-item" data-idx="{{idx}}" bindtap="bindItemTap">
+         <view class="feed-source">
+            <a class="">
+               <view class="avatar">
+                  <image src="{{item.envelopePic}}"></image>
+               </view>
+               <text>{{item.author}} {{item.niceDate}}</text>
+            </a>
+         </view>
+         <view class="feed-content">
+            <view class="question" qid="{{question_id}}">
+               <a class="question-link">
+                  <text>{{item.title}}</text>
+               </a>
+            </view>
+            <view class="answer-body">
+               <view bindtap="bindItemTap">
+                  <text class="answer-txt" aid="{{answer_id}}">{{item.desc}}</text>
+               </view>
+               <view class="answer-actions">
+                  <view class="like dot">
+                     <a>{{item.zan}} 赞同 </a>
+                  </view>
+                  <view class="comments dot">
+                     <a>{{item.chapterName}}</a>
+                  </view>
+                  <view class="follow-it"  catchtap='clickCollect' data-idx="{{idx}}">
+                     <a wx:if="{{item.collect}}">已关注</a>
+                     <a wx:else>关注项目</a>
+                  </view>
+               </view>
+            </view>
+         </view>
+      </view>
+   </block>
+</scroll-view>

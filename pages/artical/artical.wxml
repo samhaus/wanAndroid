@@ -1,0 +1,9 @@
+<!--artical.wxml-->
+<!-- 引入模板 -->
+<import src="../../wxParse/wxParse.wxml"/>
+
+<!-- <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view> -->
+
+ <web-view src='{{url}}'> </web-view> 
