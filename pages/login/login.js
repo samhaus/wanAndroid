@@ -35,13 +35,13 @@ Page({
       var data = util.json2Form({ username: username, password: password });
       util.postData(index_api, data).then((feed) => {
          console.log("登录");
-         console.log(JSON.stringify(feed.data));
+         console.log(JSON.stringify(feed.data.data));
          wx.showToast({
             title: '欢迎大佬归来',
             duration: 1500,
          })
-         //存储账号密码到本地
-         wx.setStorageSync('userInfo', feed.data);
+         //存储一些信息到本地
+         wx.setStorageSync('userInfo', feed.data.data);
          wx.setStorageSync('cookie', feed.header["set-cookie"]);
          
          // 返回上个页面

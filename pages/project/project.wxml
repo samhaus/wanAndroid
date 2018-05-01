@@ -30,10 +30,10 @@
                   <view class="like dot">
                      <a>{{item.zan}} 赞同 </a>
                   </view>
-                  <view class="comments dot">
+                  <view class="comments ">
                      <a>{{item.chapterName}}</a>
                   </view>
-                  <view class="follow-it"  catchtap='clickCollect' data-idx="{{idx}}">
+                  <view class="follow-it" style='display:none' catchtap='clickCollect' data-idx="{{idx}}">
                      <a wx:if="{{item.collect}}">已关注</a>
                      <a wx:else>关注项目</a>
                   </view>

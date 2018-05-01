@@ -46,7 +46,6 @@ function getData(url) {
                         title: res.data.errorMsg,
                         icon: 'none',
                      })
-                     return;
                   }
                   resolve(res)
                },
@@ -87,7 +86,6 @@ function postData(url, data) {
                         title: res.data.errorMsg,
                         icon: 'none',
                      })
-                     return;
                   }
                   resolve(res)
                },
