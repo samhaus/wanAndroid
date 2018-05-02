@@ -12,26 +12,28 @@
 
 先上预览图：
 
-###首页：
+首页：
 ![首页.gif](https://upload-images.jianshu.io/upload_images/4332108-1507d7a3f1019d13.gif?imageMogr2/auto-orient/strip)
-####项目：
+项目：
 ![项目.gif](https://upload-images.jianshu.io/upload_images/4332108-b21c8c3fe4995eb9.gif?imageMogr2/auto-orient/strip)
-###体系：
+体系：
 ![体系.gif](https://upload-images.jianshu.io/upload_images/4332108-1efd0e4a1e5ebfbd.gif?imageMogr2/auto-orient/strip)
-###我的：
+我的：
 ![我的.gif](https://upload-images.jianshu.io/upload_images/4332108-86cac187b5a45439.gif?imageMogr2/auto-orient/strip)
 
 
+------
 
 > 为什么要写这个？学了点js就飘了，群里大佬们写的都是Android版本的，微信小程序大家似乎都有接触但是可能都觉得比较简单，也是为了便于手持iPhone的基佬们随时点赞刷玩Android。
 
 ------
 
-## 说几点：
-### 1. 微信小程序开发入门注意事项
+# 说几点：
+## 1. 微信小程序开发入门注意事项
+
 - 这里就不赘述太多，看我基友**阿汤哥**的一篇文章[小程序基本介绍](https://www.jianshu.com/p/028addf07971)就差不多了。简单归简单，不过微信小程序在开发过程中坑还是很多的，我也是边学边百度，我这个人踩坑踩惯了，建议大家初学的时候，找个优质一点的demo照葫芦画瓢，学着写很容易上手。
 
-### 2. 未实现的功能
+## 2. 未实现的功能
 
 -  首页文章列表搜索*（计划V1.1实现）*
 -  收藏列表*（计划V1.1实现）*
@@ -39,9 +41,9 @@
 -  收藏项目等*（目前已实现收藏文章）*
 -  剩下的你们提，我做不出来*（或者没时间）*你们fork去
 
-### 3. 微信小程序代码写法的一些特点
+## 3. 微信小程序代码写法的一些特点
 
-- ####工具类等输出对公共方法
+- ###工具类等输出对公共方法
 写方法体还是一样
 ```js
 function formatNumber(n) {
@@ -65,7 +67,7 @@ module.exports = {
 ``` js
 module.exports.getData = getData;
 ```
-- ####js页面数据刷新html（wxml）
+- ###js页面数据刷新html（wxml）
 微信小程序绑定js数据不像angular那样，在每个页面的js文件中，都有个类似oncreat的方法，即Page() 函数，它是用来注册一个页面。接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等这里每个页面的WXML 中的动态数据均来自对应 Page 的 data。给页面初始赋值可以在data里面直接放置：
 ``` js
  data: {
@@ -83,7 +85,7 @@ module.exports.getData = getData;
 ``` 
 对，就是键值对的方式，和data一样。这里需要注意的是**that**这个，我们一般会在方法体内部先var一个参数that去获取全局实例**this**，这样避免方法自己的实例取代了页面的全局实例。this代表着当前对象，会随着程序的执行过程中的上下文改变，例如在wx.request({});方法的回调函数中，对象已经发生改变，所以已经不是wx.request({});方法对象了，data属性也不存在了。
 
-- ####页面销毁与返回
+- ###页面销毁与返回
 那么在微信小程序里我们怎么管理页面呢。微信小程序固然没有AMS这些东西，那么我们可以判断page来管理：
 ``` 
          // 返回上个页面
@@ -109,7 +111,7 @@ prevPage.setData({
 
 3、使用fire传递，这个方式是类似于我们EventBus的方式，后面有详解。
 
-- ####利用第三方工具fire实现类似EventBus全局事件通知
+- ###利用第三方工具fire实现类似EventBus全局事件通知
 
 之前说到，fire是一个非常轻量级的第三方的组件库，在微信小程序限制项目大小2MB的情况下，在js调用中可以实现类似EventBus的全局事件订阅管理，非常简单好用。
 1、首先，导fire文件，这个去网上下载一个*（不到1KB）*就可以，直接把onfire.js文件拷过来。
@@ -120,7 +122,7 @@ prevPage.setData({
 
 是不是一毛一样的？不仅仅在微信小程序中，包括vue、React等都可以使用，具体使用*（无非是一行代码发送消息，接收消息的时候写一个方法）*可以去自行百度。
 
-- ####列表单个Item点击控件冲突
+- ###列表单个Item点击控件冲突
 焦点冲突什么的在Android里面问题多多，在这里就要简单太多了。之前我曾尝试使用Android的方式去做，发现总是碰壁。无奈又要求助一波百度*（文档看的太少）*。在点击事件的时候，我们一般是给被点击View添加一个bindtap方法，后面写上方法名即可：
 ```
 bindtap="bindItemTap"
@@ -130,13 +132,13 @@ bindtap="bindItemTap"
 catchtap="clickCollect"
 ``` 
 这里的点击事件也很有趣，包括手指的手势都有涉及，包括手指点下去的时候、抬起来的时候、移动的时候等等，和Android的ACTION_DOWN及 ACTION_UP等异曲同工。
-- ####URL的限制， 不论什么请求必须Https
+- ###URL的限制， 不论什么请求必须Https
 微信小程序对于网络请求有一定的限制，比如我们的玩Android是仅支持http的，但是微信是要求必须使用https请求才被许可，这也简单。我采用的方法是利用[第三方搭建的网站](https://wxapi.hotapp.cn/proxy/)进行url桥接。把网络管理类里面的baseUrl前面加上*https://wxapi.hotapp.cn/proxy/*，然后拼上你在网站申请的key*（可以写死）*，然后拼上你http协议的url即可。
 
 提到微信的url限制，不得不说微信目前限制个人开发者和海外开发者使用webview打开第三方h5页面。所以，咱们在预览的时候只能用编译器去预览，想看具体的文章目前还是有限制的，我就不求赞助申请企业认证了。当然也欢迎有企业账户的基佬把代码fork过去给大家提供个福利*（别犯法哦）*。
 
 
-- ####其他的就不多赘述了
+- ###其他的就不多赘述了
 
 再一次感谢您花费时间看我啰嗦了这么久，觉得还不错可以 **[star star star](https://github.com/samhaus/wanAndroid)** 一波。微信小程序我并不打算深耕太多，后面会把重心转移到其他技术方面。如果您对本项目有什么想法欢迎[去提issue](https://github.com/samhaus/wanAndroid/issues)，有兴趣可以自己参与进来迭代维护。祝您生活愉快！
 
