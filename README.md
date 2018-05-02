@@ -141,10 +141,10 @@ catchtap="clickCollect"
 - 其他的就不多赘述了
 
 
+------
+    > **再一次感谢您花费时间看我啰嗦了这么久，觉得还不错可以 [star star star](https://github.com/samhaus/wanAndroid)一波。微信小程序我并不打算深耕太多，后面会把重心转移到其他技术方面。如果您对本项目有什么想法欢迎[去提issue](https://github.com/samhaus/wanAndroid/issues)，有兴趣可以自己参与进来迭代维护。祝您生活愉快！**
 
-    **再一次感谢您花费时间看我啰嗦了这么久，觉得还不错可以 [star star star](https://github.com/samhaus/wanAndroid)一波。微信小程序我并不打算深耕太多，后面会把重心转移到其他技术方面。如果您对本项目有什么想法欢迎[去提issue](https://github.com/samhaus/wanAndroid/issues)，有兴趣可以自己参与进来迭代维护。祝您生活愉快！**
-
-
+------
 作者 [@samhaus](https://www.jianshu.com/u/5b8df438b435)  
 2018 年 05月 01日 
 
