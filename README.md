@@ -1,7 +1,10 @@
 
 #玩Android微信小程序版
 ------
-最近开始针对项目性全面学习了一点js，和同事一起用MUI写了个项目，就敢拿出来献丑，我也是diaodiao的。经过几十个工时业余时间*（最近两周有点忙，周期拖得有点长，本来计划五一之前发出来的）*，在[仿知乎微信小程序demo](https://github.com/RebeccaHanjw/weapp-wechat-zhihu)基础上，结合[玩Android开源API](https://www.zybuluo.com/cmd/)，完成了玩Android小程序版的初版*（和群里基佬们做得比感觉做的太简单了，练练手，练练手）*，主要包含以下几大模块：
+最近开始针对项目性全面学习了一点js，和同事一起用MUI写了个项目，就敢拿出来献丑，我也是diaodiao的。经过几十个工时业余时间*（最近两周有点忙，周期拖得有点长，本来计划五一之前发出来的）*，在[仿知乎微信小程序demo](https://github.com/RebeccaHanjw/weapp-wechat-zhihu)基础上，结合[玩Android开源API](https://www.zybuluo.com/cmd/)，完成了玩Android小程序版的初版*（和群里基佬们做得比感觉做的太简单了，大家就当练练手）*，扫码或者关注微信公众号**Android精推**即可体验：
+![android精推小程序码.jpg](https://upload-images.jianshu.io/upload_images/4332108-1c51351445000118.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+主要包含以下几大模块：
 
 > * 首页
 > * 项目
